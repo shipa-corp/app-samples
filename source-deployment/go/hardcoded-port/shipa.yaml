@@ -1,0 +1,7 @@
+healthcheck:
+  path: /
+  scheme: http
+  method: GET
+  status: 200
+  allowed_failures: 0
+  use_in_router: true

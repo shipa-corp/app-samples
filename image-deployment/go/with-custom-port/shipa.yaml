@@ -1,0 +1,15 @@
+kubernetes:
+  processes:
+    web:
+      ports:
+        - name: http # an optional name for the port
+          protocol: TCP
+          port: 3000 # The port that is going to be exposed on the router.
+          target_port: 9999 # The port on which the application listens on.
+
+healthcheck:
+  path: /
+  scheme: http
+  method: GET
+  status: 200
+  use_in_router: true 

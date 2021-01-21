@@ -1,0 +1,16 @@
+hooks:
+  restart:
+    before:
+      - echo "before hook 1" > /tmp/before-hook 
+      - echo "before hook 2" >> /tmp/before-hook 
+    after:
+      - echo "after hook 1" > /tmp/after-hook 
+      - echo "after hook 2" >> /tmp/after-hook 
+
+healthcheck:
+  path: /
+  scheme: http
+  method: GET
+  status: 200
+  allowed_failures: 0
+  use_in_router: true 

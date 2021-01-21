@@ -1,0 +1,15 @@
+hooks:
+  restart:
+    before:
+      - echo "before hook 1" > /home/shipa/before-hook 
+      - echo "before hook 2" >> /home/shipa/before-hook 
+    after:
+      - echo "after hook 1" > /home/shipa/after-hook
+      - echo "after hook 2" >> /home/shipa/after-hook
+
+healthcheck:
+  path: /
+  scheme: http
+  method: GET
+  status: 200
+  use_in_router: true 

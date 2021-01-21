@@ -1,0 +1,12 @@
+healthcheck:
+  path: /healthcheck
+  scheme: http
+  method: GET
+  status: 200
+  headers:
+    Host: test.com
+    X-Custom-Header: xxx
+  match: .*OKEY.*
+  allowed_failures: 0
+  use_in_router: true
+  router_body: content
